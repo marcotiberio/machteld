@@ -3,18 +3,15 @@
 {% block content %}
   <article class="post">
     <header class="post-header">
-      {{ renderComponent('BlockPostHeader', { post: post }) }}
+      {{ renderComponent('BlockNewsHeader', { post: post }) }}
     </header>
     <section class="post-main">
       {% for component in post.meta('postComponents') %}
         {{ renderComponent(component) }}
       {% endfor %}
     </section>
-    {# <footer class="post-meta">
-      {{ renderComponent('BlockPostFooter', { post: post }) }}
-    </footer> #}
     <section class="post-related">
-      {{ renderComponent('ListingEvents', {'preContentHtml': '<h1>' ~ __('Related Exhibitions') ~ '</h1>', 'taxonomies': post.categories()}) }}
+      {{ renderComponent('ListingNews', {'preContentTitle': '<h1>' ~ __('Related News') ~ '</h1>', 'taxonomies': post.categories(), 'options': {'maxPosts': 3}}) }}
     </section>
   </article>
 {% endblock %}

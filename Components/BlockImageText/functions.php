@@ -35,7 +35,7 @@ function getACFLayout()
                 'required' => 1,
                 'mime_types' => 'jpg,jpeg,png,svg',
                 'wrapper' =>  [
-                    'width' => 50,
+                    'width' => 20,
                 ],
             ],
             [
@@ -46,25 +46,18 @@ function getACFLayout()
                 'media_upload' => 0,
                 'required' => 1,
                 'wrapper' =>  [
-                    'width' => 50,
+                    'width' => 60,
                 ],
             ],
             [
-                'label' => __('Options', 'flynt'),
-                'name' => 'optionsTab',
-                'type' => 'tab',
-                'placement' => 'top',
-                'endpoint' => 0
+                'label' => __('Button', 'flynt'),
+                'name' => 'buttonLink',
+                'type' => 'link',
+                'required' => 0,
+                'wrapper' => [
+                    'width' => 20
+                ],
             ],
-            [
-                'label' => '',
-                'name' => 'options',
-                'type' => 'group',
-                'layout' => 'row',
-                'sub_fields' => [
-                    FieldVariables\getTheme()
-                ]
-            ]
         ]
     ];
 }

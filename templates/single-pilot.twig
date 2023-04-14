@@ -1,0 +1,17 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="post">
+    <header class="post-header">
+      {{ renderComponent('BlockPilotHeader', { post: post }) }}
+    </header>
+    <section class="post-main">
+      {% for component in post.meta('artistComponents') %}
+        {{ renderComponent(component) }}
+      {% endfor %}
+    </section>
+    <section class="post-related">
+      {{ renderComponent('ListingPilots', {'preContentTitle': '<h1>' ~ __('Related Pilots') ~ '</h1>', 'taxonomies': post.categories(), 'options': {'maxPosts': 3}}) }}
+    </section>
+  </article>
+{% endblock %}

@@ -1,32 +1,29 @@
 <flynt-component load:on="visible" name="SliderImages">
   <script type="application/json">{{ jsonData|json_encode }}</script>
-  <div class="">
+  <div class="h-[calc(100vh_-_116px)]">
     {% if preContentHtml %}
       <div class="preContent h1">
         {{ preContentHtml|e('wp_kses_post') }}
       </div>
     {% endif %}
-    <div data-ref="slider" class="slider swiper-container boxed">
-      <div class="swiper-wrapper">
-        {% for image in images %}
-          <div class="slider-item swiper-slide">
-            <figure class="figure">
-              <img class="figure-image lazyload"
-                src="{{ image.src|resizeDynamic(0, 540) }}"
-                width="{{ (540 * image.aspect )|round }}"
-                height="{{ 540 }}"
-                srcset="{{ placeholderImage((540 * image.aspect)|round, 540, 'rgba(125, 125, 125, 0.1)') }}"
-                data-srcset="
-                  {{ image.src|resizeDynamic(0, 1080) }} {{ (image.aspect * 1080)|round }}w,
-                  {{ image.src|resizeDynamic(0, 860) }} {{ (image.aspect * 860)|round }}w,
-                  {{ image.src|resizeDynamic(0, 540) }} {{ (image.aspect * 540)|round }}w,
-                  {{ image.src|resizeDynamic(0, 385) }} {{ (image.aspect * 385)|round }}w,
-                  {{ image.src|resizeDynamic(0, 250) }} {{ (image.aspect * 250)|round }}w"
+    <div data-ref="slider" class="slider swiper-container w-full h-full">
+      <div class="swiper-wrapper w-full h-full">
+        {% for image in imageFigure %}
+          <div class="slider-item swiper-slide w-full h-full flex items-center justify-center">
+            <figure class="figure w-full h-full relative">
+              <img class="lazyload w-full h-full object-cover relative"
+                src="{{ image.imageImage.src | resize(32) }}"
+                data-srcset="{{function('wp_get_attachment_image_srcset', image.imageImage.id)}}"
                 data-sizes="auto"
-                alt="{{ image.alt|e }}">
-              {% if image.caption %}
-                <figcaption class="figure-caption">{{ image.caption|e }}</figcaption>
-              {% endif %}
+                alt="{{ image.imageImage.alt|e }}">
+              <div class="absolute top-0 left-0 h-full w-full flex flex-col gap-md justify-center align-middle items-center">
+                <h1>{{ image.imageTitle }}</h1>
+                {% if image.imageLink %}
+                  <a class="button button--orange" href="{{ image.imageLink .url }}"{% if image.imageLink.target %} target="{{ image.imageLink.target }}" rel="noreferrer noopener"{% endif %}>
+                    {{ image.imageLink .title|e }}
+                  </a>
+                {% endif %}
+              </h1>
             </figure>
           </div>
         {% endfor %}

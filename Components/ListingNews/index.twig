@@ -1,0 +1,31 @@
+{% if items|length > 0 %}
+  <flynt-component load:on="visible" name="ListingNews" class="bg-grey">
+    <div class="w-full max-w-screen-xl mx-auto p-sm md:p-lg">
+      {% if preContentTitle %}
+      <div class="preContent">
+        <div class="preContentTitle">
+          <h1>{{ preContentTitle }}</h3>
+        </div>
+      </div>
+      {% endif %}
+      <ul class="w-full mx-auto mt-lg md:mt-xxl grid grid-cols-1 sm:grid-cols-3 gap-sm sm:gap-md">
+        {% for item in items %}
+          <li class="grid-item {{ item.post_type }}">
+            <div class="content">
+              <a href="{{ item.link }}" class="content-link" title="{{ item.title }}">
+                <img class="content-image lazyload mb-sm"
+                  src="{{ item.thumbnail.src }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
+                  data-sizes="auto">
+                <div class="content-inner">
+                  <div class="content-inner--title h2">{{ item.title }}</div>
+                  <div class="h2">→</div>
+                </div>
+              </a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}

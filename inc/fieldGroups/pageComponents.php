@@ -15,12 +15,15 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'flexible_content',
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
-                    Components\ArchiveArtists\getACFLayout(),
-                    Components\BlockFixedPage\getACFLayout(),
-                    Components\BlockImageFullScreen\getACFLayout(),
-                    Components\BlockNewsItem\getACFLayout(),
-                    Components\BlockPostArchive\getACFLayout(),
-                    Components\BlockPress\getACFLayout(),
+                    Components\BlockCta\getACFLayout(),
+                    Components\BlockImageText\getACFLayout(),
+                    Components\BlockManifesto\getACFLayout(),
+                    Components\BlockPilotSelector\getACFLayout(),
+                    Components\BlockWysiwyg\getACFLayout(),
+                    Components\ListingNews\getACFLayout(),
+                    Components\ListingPartners\getACFLayout(),
+                    Components\ListingPilots\getACFLayout(),
+                    Components\SliderImages\getACFLayout(),
                 ],
             ],
         ],
@@ -34,22 +37,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                 [
                     'param' => 'post_type',
                     'operator' => '!=',
-                    'value' => 'event'
-                ],
-                [
-                    'param' => 'post_type',
-                    'operator' => '!=',
-                    'value' => 'artist'
-                ],
-                [
-                    'param' => 'post_type',
-                    'operator' => '!=',
-                    'value' => 'interview'
-                ],
-                [
-                    'param' => 'post_type',
-                    'operator' => '!=',
-                    'value' => 'release'
+                    'value' => 'pilot'
                 ],
                 [
                     'param' => 'post_type',

@@ -3,7 +3,7 @@
     {# regular menu item #}
     {% if not item.children %}
       <li class="item {{- item.current ? ' current-menu-item' }}">
-        <a class="link text-red-500" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+        <a class="link" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
           {{ item.title }}
         </a>
       </li>

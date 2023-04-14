@@ -4,11 +4,6 @@
     "isDynamicEntry": true,
     "src": "Components/AccordionDefault/script.js"
   },
-  "Components/BlockImageLink/script.js": {
-    "file": "assets/script-2b878f59.js",
-    "isDynamicEntry": true,
-    "src": "Components/BlockImageLink/script.js"
-  },
   "Components/BlockPostArchive/script.js": {
     "file": "assets/script-bc18cfd5.js",
     "isDynamicEntry": true,
@@ -54,7 +49,7 @@
     "src": "Components/NavigationBurger/script.js"
   },
   "Components/SliderHorizontal/script.js": {
-    "file": "assets/script-a89f2592.js",
+    "file": "assets/script-b0b61d87.js",
     "imports": [
       "_swiper-bundle.min-2c4734cd.js",
       "_helpers-0bb72b7a.js"
@@ -63,7 +58,7 @@
     "src": "Components/SliderHorizontal/script.js"
   },
   "Components/SliderImages/script.js": {
-    "file": "assets/script-b0b61d87.js",
+    "file": "assets/script-605ece1c.js",
     "imports": [
       "_swiper-bundle.min-2c4734cd.js",
       "_helpers-0bb72b7a.js"
@@ -89,13 +84,17 @@
     "src": "assets/admin.js"
   },
   "assets/admin.scss": {
-    "file": "assets/admin-69f5f40b.css",
+    "file": "assets/admin-4532520c.css",
     "isEntry": true,
     "src": "assets/admin.scss"
   },
   "assets/fonts/oraclegm-regularmono-webfont.woff": {
     "file": "assets/oraclegm-regularmono-webfont-d9253bb3.woff",
     "src": "assets/fonts/oraclegm-regularmono-webfont.woff"
+  },
+  "assets/fonts/public-sans-v14-latin-500.woff2": {
+    "file": "assets/public-sans-v14-latin-500-db83ad69.woff2",
+    "src": "assets/fonts/public-sans-v14-latin-500.woff2"
   },
   "assets/images/logo.svg": {
     "file": "assets/logo-26c0c58f.svg",
@@ -105,7 +104,6 @@
     "dynamicImports": [
       "node_modules/@webreflection/custom-elements-builtin/esm/index.js",
       "Components/AccordionDefault/script.js",
-      "Components/BlockImageLink/script.js",
       "Components/BlockPostArchive/script.js",
       "Components/BlockVideoOembed/script.js",
       "Components/GridPostsArchive/script.js",
@@ -115,12 +113,12 @@
       "Components/SliderHorizontal/script.js",
       "Components/SliderImages/script.js"
     ],
-    "file": "assets/main-071be03a.js",
+    "file": "assets/main-a62eac08.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-fdc184c4.css",
+    "file": "assets/main-6b72edd9.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -130,7 +128,7 @@
     "src": "assets/print.scss"
   },
   "assets/tinyMce.scss": {
-    "file": "assets/tinyMce-36b6b80b.css",
+    "file": "assets/tinyMce-eeee9b82.css",
     "isEntry": true,
     "src": "assets/tinyMce.scss"
   },

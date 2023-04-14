@@ -14,11 +14,10 @@
       <div class="pageWrapper">
         <header>
           {% block header %}
-            <div class="mainHeader fixed top-0 left-0 w-screen z-50 flex flex-row justify-between">
+            <div class="hidden lg:flex mainHeader fixed top-0 left-0 w-screen z-50 flex-row justify-between bg-grey">
               {{ renderComponent('NavigationMain') }}
-              {{ renderComponent('NavigationMainRight') }}
             </div>
-            {# {{ renderComponent('NavigationBurger') }} #}
+            {{ renderComponent('NavigationBurger') }}
           {% endblock %}
         </header>
         <main id="mainContent" class="mainContent squares" aria-label="{{ __('Content', 'flynt') }}">
@@ -31,9 +30,9 @@
           {% endif %}
         </main>
         <footer class="mainFooter">
-          {# {% block footer %}
+          {% block footer %}
             {{ renderComponent('NavigationFooter') }}
-          {% endblock %} #}
+          {% endblock %}
         </footer>
       </div>
     {% endblock %}

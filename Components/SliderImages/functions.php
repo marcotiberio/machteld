@@ -35,13 +35,36 @@ function getACFLayout()
             ],
             [
                 'label' => __('Images', 'flynt'),
-                'instructions' => __('Image-Format: JPG, PNG.', 'flynt'),
-                'name' => 'images',
-                'type' => 'gallery',
-                'min' => 2,
-                'preview_size' => 'medium',
-                'mime_types' => 'jpg,jpeg,png',
-                'required' => 1
+                'name' => 'imageFigure',
+                'type' => 'repeater',
+                'layout' => 'row',
+                'min' => 1,
+                'button_label' => __('Add Image', 'flynt'),
+                'sub_fields' => [
+                    [
+                        'label' => __('Title', 'flynt'),
+                        'name' => 'imageTitle',
+                        'type' => 'text'
+                    ],
+                    [
+                        'label' => __('Button', 'flynt'),
+                        'name' => 'imageLink',
+                        'type' => 'link',
+                        'return_format' => 'array'
+                    ],
+                    [
+                        'label' => __('Image', 'flynt'),
+                        'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
+                        'name' => 'imageImage',
+                        'type' => 'image',
+                        'preview_size' => 'medium',
+                        'required' => 1,
+                        'mime_types' => 'jpg,jpeg,png,svg',
+                        'wrapper' =>  [
+                            'width' => 50,
+                        ],
+                    ],
+                ],
             ],
             [
                 'label' => __('Options', 'flynt'),

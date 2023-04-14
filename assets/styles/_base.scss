@@ -2,8 +2,13 @@
 *  Typography
 */
 
-@include font-face('Oracle', 'oraclegm-regularmono-webfont', '700', 'normal');
-
+@font-face {
+  font-display: swap;
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/public-sans-v14-latin-500.woff2') format('woff2');
+}
 // body {
 //   padding: var(--spacingLarge);
 // }
@@ -14,6 +19,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   scroll-behavior: smooth;
+  @apply bg-grey;
 
   @media (min-width: $breakpoint-tablet + 1) {
     font-size: var(--bodyFontSize);
@@ -24,7 +30,7 @@ body,
 .paragraph
 p {
   color: var(--color-text);
-  font-family: 'Oracle', monospace;
+  font-family: 'Public Sans', 'Trebuchet MS', sans-serif;
   font-size: var(--bodyFontSizeSmall);
 
   @media (min-width: $breakpoint-tablet + 1) {
@@ -202,15 +208,16 @@ table {
 .button {
   @include reset-link;
   appearance: none;
+  border-radius: 100px;
   cursor: pointer;
   display: inline-block;
   font: inherit;
   font-weight: 700;
   letter-spacing: 0;
-  padding: var(--spacingSmall);
+  padding: 5px 10px;
   text-align: center;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-desktop) {
     padding: var(--spacingSmall) var(--spacingLarge);
   }
 
@@ -218,6 +225,90 @@ table {
     cursor: default;
     opacity: 0.5;
     pointer-events: none;
+  }
+
+  &--black {
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    color: var(--grey);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: var(--black);
+    }
+  }
+
+  &--orange {
+    background-color: var(--orange);
+    border: 1px solid var(--orange);
+    color: var(--black);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: var(--black);
+    }
+  }
+
+  &--plusOrange {
+    align-content: center;
+    align-items: center;
+    background-color: var(--orange);
+    border: 1px solid var(--orange);
+    color: var(--black);
+    display: flex;
+    height: 30px;
+    
+    justify-content: center;
+    text-decoration: none;
+    width: 30px;
+    
+    @media (min-width: $breakpoint-tablet) {
+      padding: 0;
+    }
+
+    &::after {
+      content: '+';
+      font-size: 30px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: var(--orange);
+    }
+  }
+
+  &--plusBlack {
+    align-content: center;
+    align-items: center;
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    color: var(--orange);
+    display: flex;
+    height: 30px;
+    
+    justify-content: center;
+    text-decoration: none;
+    width: 30px;
+    
+    @media (min-width: $breakpoint-tablet) {
+      padding: 0;
+    }
+
+    &::after {
+      content: '+';
+      font-size: 30px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: var(--black);
+    }
   }
 
   &--full {
@@ -431,36 +522,11 @@ flynt-component {
   }
 }
 
-.mainHeader {
-  @apply bg-white;
-}
-
-.home {
-  .mainHeader {
-    @apply bg-transparent;
-  }
-}
-
 .mainContent {
-  @apply py-lg;
-  @apply px-sm;
+  @apply mt-[65px];
+  @apply lg:mt-[95px];
+  @apply lg:min-h-[calc(100vh_-_169px)];
 }
-
-.home {
-  .mainContent {
-    @apply p-0;
-    @apply md:py-0;
-    @apply md:px-0;
-  }
-}
-
-// .page-archive {
-//   .mainContent {
-//     @apply p-0;
-//     @apply lg:py-0;
-//     @apply lg:px-0;
-//   }
-// }
 
 .componentSpacing {
   margin: var(--component-spacing) 0;
