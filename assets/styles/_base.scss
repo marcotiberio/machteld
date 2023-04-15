@@ -4,11 +4,36 @@
 
 @font-face {
   font-display: swap;
-  font-family: 'Public Sans';
+  font-family: 'Epilogue';
   font-style: normal;
   font-weight: 500;
-  src: url('../assets/fonts/public-sans-v14-latin-500.woff2') format('woff2');
+  src: url('../assets/fonts/Epilogue-VariableFont.woff2') format('woff2');
 }
+
+@font-face {
+  font-display: swap;
+  font-family: 'Epilogue Black';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../assets/fonts/Epilogue-VariableFont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../assets/fonts/Archivo-VariableFont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Archivo Extrabold';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../assets/fonts/Archivo Black.woff2') format('woff2');
+}
+
 // body {
 //   padding: var(--spacingLarge);
 // }
@@ -26,16 +51,9 @@ html {
   }
 }
 
-body,
-.paragraph
-p {
+body {
   color: var(--color-text);
-  font-family: 'Public Sans', 'Trebuchet MS', sans-serif;
-  font-size: var(--bodyFontSizeSmall);
-
-  @media (min-width: $breakpoint-tablet + 1) {
-    font-size: var(--bodyFontSize);
-  }
+  font-family: 'Epilogue', 'Trebuchet MS', sans-serif;
 }
 
 #{$heading-selectors} {
@@ -46,8 +64,19 @@ p {
 
 h1,
 .h1 {
-  font-size: 3rem;
-  font-weight: bold;
+  font-family: 'Epilogue Black', 'Trebuchet MS', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+
+  @media (min-width: $breakpoint-mobile) {
+    font-size: 7rem;
+  }
+}
+
+h2,
+.h2 {
+  font-family: 'Archivo Black', 'Trebuchet MS', sans-serif;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 
   @media (min-width: $breakpoint-mobile) {
@@ -55,51 +84,26 @@ h1,
   }
 }
 
-h2,
-.h2 {
-  font-size: 1.325rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-
-  @media (min-width: $breakpoint-mobile) {
-    font-size: 1.625rem;
-  }
-}
-
 h3,
 .h3 {
-  font-size: 1.225rem;
-  font-weight: 700;
+  font-family: 'Archivo Black', 'Trebuchet MS', sans-serif;
+  font-size: 2rem;
   margin-bottom: 1rem;
 
   @media (min-width: $breakpoint-mobile) {
-    font-size: 1.4rem;
+    font-size: 2.5rem;
   }
 }
 
-h4,
-.h4 {
-  font-size: 1.625rem;
-  margin-bottom: 1rem;
+p,
+.paragraph,
+.body {
+  font-size: 1.5rem;
 
-  @media (min-width: $breakpoint-mobile) {
-    font-size: 1.825rem;
-  }
-}
-
-h5,
-.h5 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-
-  @media (min-width: $breakpoint-mobile) {
+  @media (min-width: $breakpoint-desktop) {
     font-size: 1.25rem;
   }
-}
 
-.paragraph,
-p {
   a {
     color: var(--black);
   
@@ -108,10 +112,6 @@ p {
       margin-right: 10px;
     }
   }
-}
-
-.quote {
-  margin-left: 10vw;
 }
 
 hr {
@@ -212,12 +212,14 @@ table {
   cursor: pointer;
   display: inline-block;
   font: inherit;
+  font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0;
-  padding: 5px 10px;
+  padding: 10px var(--spacingSmall);
   text-align: center;
 
   @media (min-width: $breakpoint-desktop) {
+    font-size: 2.5rem;
     padding: var(--spacingSmall) var(--spacingLarge);
   }
 
@@ -229,7 +231,7 @@ table {
 
   &--black {
     background-color: var(--black);
-    border: 1px solid var(--black);
+    border: 3px solid var(--black);
     color: var(--grey);
     text-decoration: none;
 
@@ -242,7 +244,7 @@ table {
 
   &--orange {
     background-color: var(--orange);
-    border: 1px solid var(--orange);
+    border: 3px solid var(--orange);
     color: var(--black);
     text-decoration: none;
 
@@ -257,14 +259,13 @@ table {
     align-content: center;
     align-items: center;
     background-color: var(--orange);
-    border: 1px solid var(--orange);
+    border: 3px solid var(--orange);
     color: var(--black);
     display: flex;
-    height: 30px;
-    
+    height: 40px;
     justify-content: center;
     text-decoration: none;
-    width: 30px;
+    width: 40px;
     
     @media (min-width: $breakpoint-tablet) {
       padding: 0;
@@ -272,7 +273,7 @@ table {
 
     &::after {
       content: '+';
-      font-size: 30px;
+      font-size: 40px;
     }
 
     &:hover,
@@ -286,14 +287,13 @@ table {
     align-content: center;
     align-items: center;
     background-color: var(--black);
-    border: 1px solid var(--black);
+    border: 3px solid var(--black);
     color: var(--orange);
     display: flex;
-    height: 30px;
-    
+    height: 40px;
     justify-content: center;
     text-decoration: none;
-    width: 30px;
+    width: 40px;
     
     @media (min-width: $breakpoint-tablet) {
       padding: 0;
@@ -301,7 +301,7 @@ table {
 
     &::after {
       content: '+';
-      font-size: 30px;
+      font-size: 40px;
     }
 
     &:hover,
@@ -313,7 +313,7 @@ table {
 
   &--full {
     background-color: var(--blue);
-    border: 1px solid var(--blue);
+    border: 3px solid var(--blue);
     color: var(--white);
     text-decoration: none;
 
@@ -326,7 +326,7 @@ table {
 
   &--ghost {
     background-color: transparent;
-    border: 1px solid var(--black);
+    border: 3px solid var(--black);
     color: var(--black);
     text-decoration: none;
 
@@ -337,24 +337,16 @@ table {
     }
   }
 
-  &--text {
+  &--link {
     background-color: transparent;
     border: 0;
     color: var(--black);
     padding: 0;
+    text-decoration: underline;
 
     &:hover,
     &:focus {
       text-decoration: none;
-    }
-  }
-
-  &--publicMind {
-    color: var(--black);
-  
-    &::before {
-      content: '↦';
-      margin-right: 10px;
     }
   }
 }

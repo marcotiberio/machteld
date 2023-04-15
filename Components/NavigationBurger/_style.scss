@@ -26,6 +26,11 @@ flynt-component[name='NavigationBurger'] {
     }
   }
 
+  .button {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
   @import 'Partials/hamburger';
   @import 'Partials/menu';
 }

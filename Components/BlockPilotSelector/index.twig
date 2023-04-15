@@ -18,8 +18,9 @@
                   data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
                   data-sizes="auto">
                 <div class="content-inner">
-                  <div class="content-inner--title h2">{{ item.title }}</div>
-                  <div class="h2">→</div>
+                  <div class="h2">{{ item.title }}</div>
+                  <div class="h3 text-darkgrey">{{ item.location }}</div>
+                  <div class="h3">→</div>
                 </div>
               </a>
             </div>
@@ -27,7 +28,7 @@
         {% endfor %}
       </ul>
       <div class="w-full mt-lg flex justify-center items-center">
-        <a href="{{ labels.allPostsLink.url }}" class="underline hover:no-underline caption font-bold">{{ labels.allPosts }}</a>
+        <a href="{{ labels.allPostsLink.url }}" class="button button--link underline hover:no-underline caption font-bold">{{ labels.allPosts }}</a>
       </div>
     </div>
   </div>

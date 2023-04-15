@@ -8,11 +8,20 @@ module.exports = {
   theme: {
     colors: {
       white: '#fff',
-      black: '#242e2f',
+      black: '#252e2f',
       orange: '#ff7300',
-      grey: '#e0dfdd',
+      grey: '#e0dfde',
+      darkgrey: '#c4bdb5',
       current: 'currentColor',
       transparent: 'transparent'
+    },
+    fontSize: {
+      body: ['1.5rem'],
+      button: ['1.5rem'],
+      h1: ['7rem'],
+      h2: ['4rem'],
+      h3: ['2.5rem'],
+      menu: ['1.5rem']
     },
     screens: {
       sm: '640px',
@@ -21,6 +30,11 @@ module.exports = {
       xl: '1440px'
     },
     extend: {
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '3/4': '3 / 4',
+        '2/1': '2 / 1'
+      },
       borderWidth: {
         DEFAULT: '1px',
         0: '0',

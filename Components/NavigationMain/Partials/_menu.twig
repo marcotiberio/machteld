@@ -2,16 +2,16 @@
   {% for item in items %}
     {# regular menu item #}
     {% if not item.children %}
-      <li class="item flex align-middle items-center {{- item.current ? ' current-menu-item underline' }}">
-        <a class="link flex align-middle items-center hover:underline text-currentColor font-extrabold transition-transform duration-200 ease-in-out" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+      <li class="item flex align-middle items-center text-menu {{- item.current ? ' current-menu-item underline' }}">
+        <a class="link text-menu flex align-middle items-center hover:underline text-currentColor font-extrabold transition-transform duration-200 ease-in-out" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
           {{ item.title }}
         </a>
       </li>
     {% endif %}
     {# menu with submenu item #}
     {% if item.children %}
-      <li class="item flex align-middle items-center open-submenu {{- item.current ? ' current-menu-item underline' }}" >
-        <a class="link flex align-middle items-center no-underline hover:underline text-currentColor font-extrabold transition-transform duration-200 ease-in-out" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+      <li class="item flex align-middle items-center open-submenu text-menu {{- item.current ? ' current-menu-item underline' }}" >
+        <a class="link text-menu flex align-middle items-center no-underline hover:underline text-currentColor font-extrabold transition-transform duration-200 ease-in-out" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
           {{ item.title }}
         </a>
         <ul class="menu submenu">

@@ -84,9 +84,25 @@
     "src": "assets/admin.js"
   },
   "assets/admin.scss": {
-    "file": "assets/admin-4532520c.css",
+    "file": "assets/admin-bd063d01.css",
     "isEntry": true,
     "src": "assets/admin.scss"
+  },
+  "assets/fonts/Archivo-Italic-VariableFont.woff2": {
+    "file": "assets/Archivo-Italic-VariableFont-82ee36fd.woff2",
+    "src": "assets/fonts/Archivo-Italic-VariableFont.woff2"
+  },
+  "assets/fonts/Archivo-VariableFont.woff2": {
+    "file": "assets/Archivo-VariableFont-ae6a7188.woff2",
+    "src": "assets/fonts/Archivo-VariableFont.woff2"
+  },
+  "assets/fonts/Epilogue-Italic-VariableFont.woff2": {
+    "file": "assets/Epilogue-Italic-VariableFont-9120bdc6.woff2",
+    "src": "assets/fonts/Epilogue-Italic-VariableFont.woff2"
+  },
+  "assets/fonts/Epilogue-VariableFont.woff2": {
+    "file": "assets/Epilogue-VariableFont-e296bf08.woff2",
+    "src": "assets/fonts/Epilogue-VariableFont.woff2"
   },
   "assets/fonts/oraclegm-regularmono-webfont.woff": {
     "file": "assets/oraclegm-regularmono-webfont-d9253bb3.woff",
@@ -118,7 +134,7 @@
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-6b72edd9.css",
+    "file": "assets/main-26f62f8a.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -128,7 +144,7 @@
     "src": "assets/print.scss"
   },
   "assets/tinyMce.scss": {
-    "file": "assets/tinyMce-eeee9b82.css",
+    "file": "assets/tinyMce-98f96c8c.css",
     "isEntry": true,
     "src": "assets/tinyMce.scss"
   },

@@ -12,28 +12,13 @@ add_action('Flynt/afterRegisterComponents', function () {
         'position' => 'acf_after_title',
         'fields' => [
             [
-                'label' => __('Portrait', 'flynt'),
-                'name' => 'artistPic',
-                'type' => 'image',
-                'preview_size' => 'medium',
-                'instructions' => __('Image-Format: JPG, PNG.', 'flynt'),
-                'mime_types' => 'jpg,jpeg,png',
+                'label' => __('Location', 'flynt'),
+                'name' => 'location',
+                'type' => 'text',
                 'wrapper' => [
-                    'width' => 50
-                ],
-            ],
-            [
-                'label' => __('Bio', 'flynt'),
-                'name' => 'artistBio',
-                'type' => 'wysiwyg',
-                'tabs' => 'visual',
-                'delay' => 1,
-                'media_upload' => 0,
-                'required' => 0,
-                'wrapper' => [
-                    'width' => 50,
+                    'width' => 100,
                 ]
-            ]
+            ],
         ],
         'location' => [
             [

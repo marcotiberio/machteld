@@ -11,80 +11,20 @@ add_action('Flynt/afterRegisterComponents', function () {
         'menu_order' => 1,
         'position' => 'acf_after_title',
         'fields' => [
+            // [
+            //     'label' => __('Bio', 'flynt'),
+            //     'name' => 'bioTab',
+            //     'type' => 'tab',
+            //     'placement' => 'top',
+            //     'endpoint' => 0
+            // ],
             [
-                'label' => __('Bio', 'flynt'),
-                'name' => 'bioTab',
-                'type' => 'tab',
-                'placement' => 'top',
-                'endpoint' => 0
-            ],
-            [
-                'label' => __('Bio', 'flynt'),
-                'name' => 'artistBio',
-                'type' => 'wysiwyg',
-                'tabs' => 'visual',
-                'delay' => 1,
-                'media_upload' => 0,
-                'required' => 0,
+                'label' => __('Location', 'flynt'),
+                'name' => 'location',
+                'type' => 'text',
                 'wrapper' => [
-                    'width' => '100',
+                    'width' => 100,
                 ]
-            ],
-            [
-                'label' => __('Links', 'flynt'),
-                'name' => 'linksTab',
-                'type' => 'tab',
-                'placement' => 'top',
-                'endpoint' => 0
-            ],
-            [
-                'label' => __('Link Column', 'flynt'),
-                'name' => 'repeaterOuter',
-                'type' => 'repeater',
-                'layout' => 'block',
-                'min' => '1',
-                'button_label' => __('Add Column', 'flynt'),
-                'sub_fields' => [
-                    [
-                        'label' => __('Title', 'flynt'),
-                        'name' => 'title',
-                        'type' => 'text'
-                    ],
-                    [
-                        'label' => __('Links', 'flynt'),
-                        'name' => 'repeaterInner',
-                        'type' => 'repeater',
-                        'layout' => 'block',
-                        'button_label' => __('Add Link', 'flynt'),
-                        'sub_fields' => [
-                            [
-                                'label' => __('Link', 'flynt'),
-                                'name' => 'socialLink',
-                                'type' => 'link',
-                                'return_format' => 'array',
-                                'wrapper' => [
-                                    'width' => 100
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'label' => __('Booking', 'flynt'),
-                'name' => 'bookingTab',
-                'type' => 'tab',
-                'placement' => 'top',
-                'endpoint' => 0
-            ],
-            [
-                'label' => __('Booking Link', 'flynt'),
-                'name' => 'bookingLink',
-                'type' => 'link',
-                'return_format' => 'array',
-                'wrapper' => [
-                    'width' => 100
-                ],
             ],
         ],
         'location' => [

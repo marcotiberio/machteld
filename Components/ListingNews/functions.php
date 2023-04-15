@@ -109,8 +109,17 @@ Options::addTranslatable('ListingNews', [
                 'label' => __('All Posts', 'flynt'),
                 'name' => 'allPosts',
                 'type' => 'text',
-                'default_value' => 'See More Posts',
-                'required' => 1,
+                'default_value' => __('View all', 'flynt'),
+                'required' => 0,
+                'wrapper' => [
+                    'width' => 50
+                ],
+            ],
+            [
+                'label' => __('All Posts Link', 'flynt'),
+                'name' => 'allPostsLink',
+                'type' => 'link',
+                'required' => 0,
                 'wrapper' => [
                     'width' => 50
                 ],

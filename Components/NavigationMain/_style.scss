@@ -8,6 +8,10 @@ flynt-component[name='NavigationMain'] {
   .boxed {
     padding-bottom: 0;
   }
+
+  .item {
+    font-family: 'Epilogue Black', 'Trebuchet MS', sans-serif;
+  }
   
   .submenu {
     align-items: flex-start;
@@ -22,5 +26,11 @@ flynt-component[name='NavigationMain'] {
     position: absolute;
     text-align: center;
     width: calc(100% - var(--spacingLarge)*2);
+  }
+
+  .button {
+    @media (min-width: $breakpoint-desktop) {
+      font-size: 1.25rem;
+    }
   }
 }
