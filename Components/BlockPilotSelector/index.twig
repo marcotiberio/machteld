@@ -2,13 +2,12 @@
   <flynt-component load:on="visible" name="BlockPilotSelector" class="bg-grey">
     <div class="w-full max-w-screen-xl mx-auto p-sm md:p-lg">
       {% if preContentTitle %}
-      <div class="preContent">
-        <div class="preContentTitle">
-          <h1>{{ preContentTitle }}</h3>
-        </div>
+      <div class="w-full flex justify-between items-center">
+        <h2>{{ preContentTitle }}</h2>
+        <a href="{{ labels.allPostsLink.url }}" class="button--link underline hover:no-underline caption font-bold text-body">{{ labels.allPosts }}</a>
       </div>
       {% endif %}
-      <ul class="w-full mx-auto mt-lg md:mt-xxl grid grid-cols-1 sm:grid-cols-3 gap-sm sm:gap-md">
+      <ul class="w-full mx-auto mt-lg md:mt-xl grid grid-cols-1 sm:grid-cols-3 gap-sm sm:gap-md">
         {% for item in items %}
           <li class="grid-item {{ item.post_type }}">
             <div class="content">
@@ -17,9 +16,10 @@
                   src="{{ item.thumbnail.src }}"
                   data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
                   data-sizes="auto">
-                <div class="content-inner">
-                  <div class="h2">{{ item.title }}</div>
-                  <div class="h3 text-darkgrey">{{ item.location }}</div>
+                <div class="content-inner mt-[10px]">
+                  <div class="text-body font-bold">{{ item.title }}</div>
+                  <div class="text-body font-bold text-darkgrey">{{ item.partner }}</div>
+                  <div class="text-body">{{ item.intro|truncate(10) }}</div>
                   <div class="h3">→</div>
                 </div>
               </a>
@@ -27,9 +27,6 @@
           </li>
         {% endfor %}
       </ul>
-      <div class="w-full mt-lg flex justify-center items-center">
-        <a href="{{ labels.allPostsLink.url }}" class="button button--link underline hover:no-underline caption font-bold">{{ labels.allPosts }}</a>
-      </div>
     </div>
   </div>
 {% endif %}

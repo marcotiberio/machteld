@@ -1,13 +1,13 @@
-<flynt-component load:on="visible" name="BlockManifesto" class="bg-black">
-  <div class="w-full max-w-screen-xl mx-auto px-sm pt-sm pb-lg md:px-lg md:pt-lg md:pb-xxl">
+<flynt-component load:on="visible" name="BlockManifesto" class="bg-green">
+  <div class="w-full h-[calc(100vh_-_106px)] max-w-screen-xl mx-auto px-sm pt-sm pb-lg md:px-lg md:py-lg flex flex-col justify-between">
     {% if preContentTitle %}
       <div class="preContent">
         <div class="preContentTitle text-grey">
-          <h1>{{ preContentTitle }}</h3>
+          <h2>{{ preContentTitle }}</h2>
         </div>
       </div>
     {% endif %}
-    <div class="mt-lg md:mt-xxl w-full max-w-screen-[1280px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-md">
+    <div class="mt-lg w-full max-w-screen-[1280px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-md">
       {% for panel in accordionPanels %}
         <div x-cloak x-data="{ isOpen: false }" class="panel">
           <div>

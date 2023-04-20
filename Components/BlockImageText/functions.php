@@ -18,6 +18,13 @@ function getACFLayout()
                 'endpoint' => 0,
             ],
             [
+                'label' => __('Title', 'flynt'),
+                'instructions' => __('Want to add a headline? And a paragraph? Go ahead! Or just leave it empty and nothing will be shown.', 'flynt'),
+                'name' => 'preContentTitle',
+                'type' => 'text',
+                'media_upload' => 0,
+            ],
+            [
                 'label' => __('Image Position', 'flynt'),
                 'name' => 'imagePosition',
                 'type' => 'button_group',
@@ -46,7 +53,7 @@ function getACFLayout()
                 'media_upload' => 0,
                 'required' => 1,
                 'wrapper' =>  [
-                    'width' => 60,
+                    'width' => 80,
                 ],
             ],
             [
@@ -55,9 +62,25 @@ function getACFLayout()
                 'type' => 'link',
                 'required' => 0,
                 'wrapper' => [
-                    'width' => 20
+                    'width' => 100
                 ],
             ],
+            [
+                'label' => __('Options', 'flynt'),
+                'name' => 'optionsTab',
+                'type' => 'tab',
+                'placement' => 'top',
+                'endpoint' => 0
+            ],
+            [
+                'label' => '',
+                'name' => 'options',
+                'type' => 'group',
+                'layout' => 'row',
+                'sub_fields' => [
+                    FieldVariables\getColorBackground(),
+                ]
+            ]
         ]
     ];
 }

@@ -93,29 +93,29 @@ function getACFLayout()
     ];
 }
 
-Options::addTranslatable('ListingPilots', [
-    [
-        'label' => __('Labels', 'flynt'),
-        'name' => 'labelsTab',
-        'type' => 'tab',
-        'placement' => 'top',
-        'endpoint' => 0
-    ],
-    [
-        'label' => '',
-        'name' => 'labels',
-        'type' => 'group',
-        'sub_fields' => [
-            [
-                'label' => __('All Posts', 'flynt'),
-                'name' => 'allPosts',
-                'type' => 'text',
-                'default_value' => 'See More Posts',
-                'required' => 1,
-                'wrapper' => [
-                    'width' => 50
-                ],
-            ],
-        ],
-    ]
-]);
+// Options::addTranslatable('ListingPilots', [
+//     [
+//         'label' => __('Labels', 'flynt'),
+//         'name' => 'labelsTab',
+//         'type' => 'tab',
+//         'placement' => 'top',
+//         'endpoint' => 0
+//     ],
+//     [
+//         'label' => '',
+//         'name' => 'labels',
+//         'type' => 'group',
+//         'sub_fields' => [
+//             [
+//                 'label' => __('All Posts', 'flynt'),
+//                 'name' => 'allPosts',
+//                 'type' => 'text',
+//                 'default_value' => 'See More Posts',
+//                 'required' => 1,
+//                 'wrapper' => [
+//                     'width' => 50
+//                 ],
+//             ],
+//         ],
+//     ]
+// ]);

@@ -44,7 +44,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   scroll-behavior: smooth;
-  @apply bg-grey;
 
   @media (min-width: $breakpoint-tablet + 1) {
     font-size: var(--bodyFontSize);
@@ -215,6 +214,7 @@ table {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0;
+  line-height: 1;
   padding: 10px var(--spacingSmall);
   text-align: center;
 
@@ -239,6 +239,19 @@ table {
     &:focus {
       background-color: transparent;
       color: var(--black);
+    }
+  }
+
+  &--green {
+    background-color: var(--green);
+    border: 3px solid var(--green);
+    color: var(--grey);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: var(--green);
     }
   }
 

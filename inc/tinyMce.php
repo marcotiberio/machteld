@@ -42,6 +42,11 @@ add_filter('tiny_mce_before_init', function ($init) {
             // Send it to style_formats as true js array
             $init['style_formats'] = json_encode($config['styleformats']);
         }
+
+        if (isset($config['textcolor_map'])) {
+            // Send it to textcolor_map as true js array
+            $init['textcolor_map'] = json_encode($config['textcolor_map']);
+        }
     }
     return $init;
 });
@@ -76,6 +81,10 @@ function getBlockFormats($blockFormats)
 function getConfig()
 {
     return [
+        'textcolor_map' => [
+            '000', 'Black',
+            'fff', 'White',
+        ],
         'blockformats' => [
             'Paragraph' => 'p',
             'Heading 1' => 'h1',
@@ -163,11 +172,14 @@ function getConfig()
                     'bold',
                     'italic',
                     'blockquote',
+                    'forecolor',
                     '|',
                     'alignleft',
                     'aligncenter',
                     'alignright',
                     'alignjustify',
+                    '|',
+                    'hr',
                     '|',
                     'bullist',
                     'numlist',
@@ -185,11 +197,14 @@ function getConfig()
                     'bold',
                     'italic',
                     'blockquote',
+                    'forecolor',
                     '|',
                     'alignleft',
                     'aligncenter',
                     'alignright',
                     'alignjustify',
+                    '|',
+                    'hr',
                     '|',
                     'bullist',
                     'numlist',

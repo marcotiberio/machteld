@@ -66,6 +66,15 @@
     "isDynamicEntry": true,
     "src": "Components/SliderImages/script.js"
   },
+  "Components/SliderLogos/script.js": {
+    "file": "assets/script-0ddd3ddf.js",
+    "imports": [
+      "_swiper-bundle.min-2c4734cd.js",
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/SliderLogos/script.js"
+  },
   "_helpers-0bb72b7a.js": {
     "file": "assets/helpers-0bb72b7a.js"
   },
@@ -84,7 +93,7 @@
     "src": "assets/admin.js"
   },
   "assets/admin.scss": {
-    "file": "assets/admin-bd063d01.css",
+    "file": "assets/admin-2f05f91e.css",
     "isEntry": true,
     "src": "assets/admin.scss"
   },
@@ -127,14 +136,15 @@
       "Components/ListingHomepage/script.js",
       "Components/NavigationBurger/script.js",
       "Components/SliderHorizontal/script.js",
-      "Components/SliderImages/script.js"
+      "Components/SliderImages/script.js",
+      "Components/SliderLogos/script.js"
     ],
-    "file": "assets/main-a62eac08.js",
+    "file": "assets/main-dd8a0c09.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-26f62f8a.css",
+    "file": "assets/main-f34bff9d.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -144,7 +154,7 @@
     "src": "assets/print.scss"
   },
   "assets/tinyMce.scss": {
-    "file": "assets/tinyMce-98f96c8c.css",
+    "file": "assets/tinyMce-3c176b51.css",
     "isEntry": true,
     "src": "assets/tinyMce.scss"
   },

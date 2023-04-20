@@ -11,17 +11,21 @@ add_action('Flynt/afterRegisterComponents', function () {
         'menu_order' => 1,
         'position' => 'acf_after_title',
         'fields' => [
-            // [
-            //     'label' => __('Bio', 'flynt'),
-            //     'name' => 'bioTab',
-            //     'type' => 'tab',
-            //     'placement' => 'top',
-            //     'endpoint' => 0
-            // ],
             [
-                'label' => __('Location', 'flynt'),
-                'name' => 'location',
+                'label' => __('Partner', 'flynt'),
+                'name' => 'partner',
                 'type' => 'text',
+                'wrapper' => [
+                    'width' => 100,
+                ]
+            ],
+            [
+                'label' => __('Intro', 'flynt'),
+                'name' => 'intro',
+                'type' => 'wysiwyg',
+                'tabs' => 'visual',
+                'media_upload' => 0,
+                'delay' => 1,
                 'wrapper' => [
                     'width' => 100,
                 ]
@@ -48,15 +52,11 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'flexible_content',
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
-                    Components\BlockAnnouncement\getACFLayout(),
-                    Components\BlockContactForm\getACFLayout(),
-                    Components\BlockDivider\getACFLayout(),
-                    Components\BlockGallery\getACFLayout(),
-                    Components\BlockGalleryEvent\getACFLayout(),
-                    Components\BlockPress\getACFLayout(),
-                    Components\BlockVideoOembed\getACFLayout(),
+                    Components\BlockCta\getACFLayout(),
+                    Components\BlockImageTextPost\getACFLayout(),
+                    Components\BlockManifesto\getACFLayout(),
                     Components\BlockWysiwyg\getACFLayout(),
-                    Components\SliderImages\getACFLayout(),
+                    Components\ListingPartners\getACFLayout(),
                 ],
             ],
         ],
