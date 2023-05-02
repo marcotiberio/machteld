@@ -1,5 +1,5 @@
-<flynt-component load:on="visible" name="BlockManifesto" class="bg-green">
-  <div class="w-full h-[calc(100vh_-_106px)] max-w-screen-xl mx-auto px-sm pt-sm pb-lg md:px-lg md:py-lg flex flex-col justify-between">
+<flynt-component load:on="visible" name="BlockManifesto" class="bg-cover bg-no-repeat" style="background-image: url('{{ backgroundImage }}'); background-color:{% if colorBackground %}{{ colorBackground }}{% else %}var(--green){% endif %};">
+  <div class="w-full h-fit sm:h-fit lg:min-h-[calc(100vh_-_106px)] lg:h-auto max-w-screen-xl mx-auto px-sm pt-sm pb-lg md:px-lg md:py-xl flex flex-col justify-between md:justify-start">
     {% if preContentTitle %}
       <div class="preContent">
         <div class="preContentTitle text-grey">
@@ -7,34 +7,34 @@
         </div>
       </div>
     {% endif %}
-    <div class="mt-lg w-full max-w-screen-[1280px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-md">
+    <div class="w-full max-w-screen-xl grid grid-cols-2 sm:grid-cols-3">
       {% for panel in accordionPanels %}
         <div x-cloak x-data="{ isOpen: false }" class="panel">
           <div>
             <div class="flex flex-row gap-sm">
-              <div class="flex flex-col gap-sm w-1/3">
-                <img class="lazyload object-cover h-[200px]"
-                  src="{{ panel.panelImage.src | resize(32) }}"
-                  data-srcset="{{function('wp_get_attachment_image_srcset', panel.panelImage.id)}}"
+              <div class="flex flex-col gap-sm w-full mb-sm">
+                <img class="lazyload object-contain"
+                  src="{{ panel.panelInfographic.src | resize(32) }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', panel.panelInfographic.id)}}"
                   data-sizes="auto"
-                  alt="{{ panel.panelImage.alt|e }}">
+                  alt="{{ panel.panelInfographic.alt|e }}">
               </div>
-              <div class="w-2/3">
-                <h3 class="text-grey break-all">{{ panel.panelTitle|e }}</h3>
+              {# <div class="w-2/3">
+                <div class="text-grey break-all text-[25px] font-bold">{{ panel.panelTitle|e }}</div>
                 <div class="text-grey">{{ panel.panelIntro|e('wp_kses_post') }}</div>
-              </div>
+              </div> #}
             </div>
-            <div class="flex justify-center mt-sm">
+            {# <div class="flex justify-center mt-[10px]">
               <button 
                 @click="isOpen = true
                 $nextTick(() => $refs.modalCloseButton.focus())
-                " class="panel-trigger button button--plusOrange" type="button" aria-expanded="false" aria-controls="content-{{ loop.index }}">
+                " class="panel-trigger button button--plusGreenDark" type="button" aria-expanded="false" aria-controls="content-{{ loop.index }}">
               </button>
-            </div>
+            </div> #}
           </div>
           <div 
             x-show="isOpen" 
-            class="panel-content absolute top-0 right-0 w-full lg:w-[66vw] h-full bg-grey p-sm lg:p-lg" 
+            class="panel-content absolute top-0 right-0 w-full lg:w-[66vw] h-full lg:h-full bg-grey p-sm lg:p-lg z-50" 
             x-transition:enter="transition cubic-bezier(0.19, 1, 0.22, 1) duration-800" 
             x-transition:enter-start="opacity-0" 
             x-transition:enter-end="opacity-100" 
@@ -44,23 +44,27 @@
             aria-hidden="true" 
             id="content-{{ loop.index }}">
             <div class="h-full flex flex-col gap-md justify-between">
-              <div class="flex flex-row grow h-full justify-between align-start items-start gap-md">
-                <div class="w-2/3 flex flex-col grow h-full justify-between align-start items-start">
+              <div class="flex flex-col lg:flex-row grow h-full justify-between align-start items-start gap-md">
+                <div class="w-full lg:w-2/3 flex flex-col grow h-full justify-between align-start items-start">
                   <div class="h2 text-black break-all">{{ panel.panelTitle|e }}</div>
-                  <div class="cursor-pointer text-orange h2" @click="isOpen = false"
-                    x-ref="modalCloseButton">
-                    ←
+                  <div>
+                    <div class="text">{{ panel.panelContent|e('wp_kses_post') }}</div>
+                    <div class="cursor-pointer text-blue h2" @click="isOpen = false"
+                      x-ref="modalCloseButton">
+                      ←
+                    </div>
                   </div>
                 </div>
-                <div class="w-1/3 h-full">
-                  <img class="lazyload w-full h-full object-cover aspect-3/4"
-                    src="{{ panel.panelImage.src | resize(32) }}"
-                    data-srcset="{{function('wp_get_attachment_image_srcset', panel.panelImage.id)}}"
+                {% if panel.panelHoverImage %}
+                <div class="w-full lg:w-1/3 h-full">
+                  <img class="hidden lg:block lazyload w-full lg:h-full object-contain aspect-3/4"
+                    src="{{ panel.panelHoverImage.src | resize(32) }}"
+                    data-srcset="{{function('wp_get_attachment_image_srcset', panel.panelHoverImage.id)}}"
                     data-sizes="auto"
-                    alt="{{ panel.panelImage.alt|e }}">
+                    alt="{{ panel.panelHoverImage.alt|e }}">
                 </div>
+                {% endif %}
               </div>
-              <div class="text">{{ panel.panelContent|e('wp_kses_post') }}</div>
             </div>
           </div>
         </div>

@@ -61,8 +61,21 @@ function getACFLayout()
                         'required' => 1,
                         'mime_types' => 'jpg,jpeg,png,svg',
                         'wrapper' =>  [
-                            'width' => 50,
+                            'width' => 100,
                         ],
+                    ],
+                    [
+                        'label' => __('Image Overlay', 'flynt'),
+                        'instructions' => __('Add overlay to the image', 'flynt'),
+                        'name' => 'imageOverlay',
+                        'type' => 'true_false',
+                        'ui' => 1,
+                        'ui_on_text' => 'Yes',
+                        'ui_off_text' => 'No',
+                        'default_value' => 1,
+                        'wrapper' => [
+                            'width' => 100,
+                        ]
                     ],
                 ],
             ],

@@ -20,7 +20,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                 ]
             ],
             [
-                'label' => __('Intro', 'flynt'),
+                'label' => __('Excerpt', 'flynt'),
                 'name' => 'intro',
                 'type' => 'wysiwyg',
                 'tabs' => 'visual',
@@ -54,8 +54,8 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'layouts' => [
                     Components\BlockCta\getACFLayout(),
                     Components\BlockImageTextPost\getACFLayout(),
-                    Components\BlockManifesto\getACFLayout(),
                     Components\BlockWysiwyg\getACFLayout(),
+                    Components\GridImages\getACFLayout(),
                     Components\ListingPartners\getACFLayout(),
                 ],
             ],

@@ -1,23 +1,23 @@
-<ul class="menu list-none flex align-middle items-center justify-end gap-lg w-full">
+<ul class="menu list-none flex align-middle items-center justify-end gap-md w-full">
   {% for item in items %}
     {# regular menu item #}
     {% if not item.children %}
-      <li class="item flex align-middle items-center text-menu {{- item.current ? ' current-menu-item underline' }}">
-        <a class="link text-menu flex align-middle items-center hover:underline text-currentColor font-extrabold transition-transform duration-200 ease-in-out" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+      <li class="item flex align-middle items-center text-menu {{- item.current ? ' current-menu-item text-blue' }}">
+        <a class="link text-menu text-darkgreen flex align-middle items-center hover:text-blue text-currentColor font-extrabold transition-transform duration-200 ease-in-out" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
           {{ item.title }}
         </a>
       </li>
     {% endif %}
     {# menu with submenu item #}
     {% if item.children %}
-      <li class="item flex align-middle items-center open-submenu text-menu {{- item.current ? ' current-menu-item underline' }}" >
-        <a class="link text-menu flex align-middle items-center no-underline hover:underline text-currentColor font-extrabold transition-transform duration-200 ease-in-out" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+      <li class="item flex align-middle items-center open-submenu text-menu {{- item.current ? ' current-menu-item text-blue' }}" >
+        <a class="link text-menu flex align-middle items-center no-underline hover:text-blue text-currentColor font-extrabold transition-transform duration-200 ease-in-out" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
           {{ item.title }}
         </a>
         <ul class="menu submenu">
           {% for subitem in item.children %}
-            <li class="item {{- item.current ? ' current-menu-item underline' }}">
-              <a class="link flex align-middle items-center no-underline hover:underline  text-currentColor font-normal transition-transform duration-200 ease-in-out" href="{{ subitem.link }}">{{ subitem.title }}</a>
+            <li class="item {{- item.current ? ' current-menu-item text-blue' }}">
+              <a class="link text-darkgreen flex align-middle items-center no-underline hover:text-blue  text-currentColor font-normal transition-transform duration-200 ease-in-out" href="{{ subitem.link }}">{{ subitem.title }}</a>
             </li>
           {% endfor %}
         </ul>

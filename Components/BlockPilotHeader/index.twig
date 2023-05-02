@@ -8,9 +8,12 @@
         data-sizes="auto">
     </div>
     {% endif %} #}
-    <div class="h-auto lg:h-auto w-full grow flex flex-col justify-start gap-sm">
+    <div class="h-auto lg:h-auto w-full grow flex flex-col justify-start">
+      <div class="text-body text-black font-[300] mb-md">
+        {% if post.category %}<span>{{ post.category }} · </span>{% endif %}
+        {% if post.partner %}<span>{{ post.partner }}</span>{% endif %}
+      </div>
       <div class="h2">{{ post.title }}</div>
-      <div class="h3 text-darkgrey">{{ post.partner }}</div>
     </div>
   </div>
 </flynt-component>

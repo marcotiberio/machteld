@@ -4,12 +4,12 @@
   background-color: var(--grey);
   display: flex;
   flex-flow: column;
+  font-family: 'Archivo Bold', 'Trebuchet MS', sans-serif;
   height: auto;
   inset-block-start: var(--navigation-height);
   inset-inline-start: 0;
   justify-content: space-between;
   margin-top: 0;
-  min-height: calc(100% - var(--navigation-height));
   overflow-y: scroll;
   padding: var(--component-spacing) var(--container-padding);
   position: fixed;
@@ -29,14 +29,19 @@
     align-items: center;
     border-top: 2px solid var(--black);
     display: flex;
-    flex-grow: 1;
+    flex-grow: 0;
     justify-content: center;
+
+    &:last-child {
+      border-bottom: 2px solid var(--black);
+    }
   }
 
   .link {
     @include reset-link;
     color: var(--color-text);
     display: block;
+    font-family: 'Archivo Bold', 'Trebuchet MS', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     padding: 0.9rem 1.25rem;

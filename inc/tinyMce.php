@@ -84,15 +84,13 @@ function getConfig()
         'textcolor_map' => [
             '000', 'Black',
             'fff', 'White',
+            '2bdd00', 'Green',
         ],
         'blockformats' => [
             'Paragraph' => 'p',
             'Heading 1' => 'h1',
             'Heading 2' => 'h2',
-            'Heading 3' => 'h3',
-            'Heading 4' => 'h4',
-            'Heading 5' => 'h5',
-            'Heading 6' => 'h6'
+            'Heading 3' => 'h3'
         ],
         'styleformats' => [
             [
@@ -114,51 +112,30 @@ function getConfig()
                         'classes' => 'h3',
                         'selector' => '*'
                     ],
-                    [
-                        'title' => 'Heading 4',
-                        'classes' => 'h4',
-                        'selector' => '*'
-                    ],
-                    [
-                        'title' => 'Heading 5',
-                        'classes' => 'h5',
-                        'selector' => '*'
-                    ],
-                    [
-                        'title' => 'Heading 6',
-                        'classes' => 'h6',
-                        'selector' => '*'
-                    ],
                 ]
             ],
             [
                 'title' => 'Buttons',
                 'icon' => '',
                 'items' => [
+                    // [
+                    //     'title' => 'Button',
+                    //     'classes' => 'button',
+                    //     'selector' => 'a,button'
+                    // ],
                     [
-                        'title' => 'Button',
-                        'classes' => 'button',
-                        'selector' => 'a,button'
+                        'title' => 'Button Black',
+                        'classes' => 'button button--black',
+                        'selector' => '*'
                     ],
                     [
-                        'title' => 'Button Outlined',
-                        'classes' => 'button--outlined',
-                        'selector' => '.button'
+                        'title' => 'Button Green',
+                        'classes' => 'button button--green',
+                        'selector' => '*'
                     ],
                     [
-                        'title' => 'Button Text',
-                        'classes' => 'button--text',
-                        'selector' => '.button'
-                    ]
-                ]
-            ],
-            [
-                'title' => 'Text',
-                'icon' => '',
-                'items' => [
-                    [
-                        'title' => 'Quote',
-                        'classes' => 'quote',
+                        'title' => 'Button Blue',
+                        'classes' => 'button button--blue',
                         'selector' => '*'
                     ]
                 ]
@@ -182,7 +159,6 @@ function getConfig()
                     'hr',
                     '|',
                     'bullist',
-                    'numlist',
                     '|',
                     'link',
                     'unlink',
@@ -207,7 +183,6 @@ function getConfig()
                     'hr',
                     '|',
                     'bullist',
-                    'numlist',
                     '|',
                     'link',
                     'unlink',

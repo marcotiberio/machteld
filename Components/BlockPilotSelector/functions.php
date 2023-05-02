@@ -6,21 +6,21 @@ use Flynt\FieldVariables;
 use Flynt\Utils\Options;
 use Timber\Timber;
 
-const POST_TYPE = 'pilot';
+// const POST_TYPE = 'pilot';
 
-add_filter('Flynt/addComponentData?name=BlockPilotSelector', function ($data) {
-    $postType = POST_TYPE;
+// add_filter('Flynt/addComponentData?name=BlockPilotSelector', function ($data) {
+//     $postType = POST_TYPE;
 
-    $data['items'] = Timber::get_posts([
-        'post_status' => 'publish',
-        'post_type' => $postType,
-        'ignore_sticky_posts' => 1,
-        'posts_per_page' => 3,
-        'order' => 'ASC',
-    ]);
+//     $data['items'] = Timber::get_posts([
+//         'post_status' => 'publish',
+//         'post_type' => $postType,
+//         'ignore_sticky_posts' => 1,
+//         'posts_per_page' => -1,
+//         'order' => 'ASC',
+//     ]);
 
-    return $data;
-});
+//     return $data;
+// });
 
 function getACFLayout()
 {
@@ -49,16 +49,36 @@ function getACFLayout()
             ],
             [
                 'label' => __('Artists', 'flynt'),
-                'name' => 'post',
+                'name' => 'pilots',
                 'type' => 'relationship',
                 'post_type' => [
                     'pilot',
                 ],
                 'allow_null' => 1,
                 'multiple' => 1,
-                'return_format' => 'post_object',
+                'return_format' => 'object',
                 'ui' => 1,
                 'required' => 0,
+            ],
+            [
+                'label' => __('Options', 'flynt'),
+                'name' => 'optionsTab',
+                'type' => 'tab',
+                'placement' => 'top',
+                'endpoint' => 0
+            ],
+            FieldVariables\getColorBackground(),
+            [
+                'label' => __('Background Image', 'flynt'),
+                'name' => 'backgroundImage',
+                'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
+                'type' => 'image',
+                'preview_size' => 'medium',
+                'required' => 0,
+                'mime_types' => 'jpg,jpeg,png,svg',
+                'wrapper' =>  [
+                    'width' => 100,
+                ],
             ],
         ]
     ];

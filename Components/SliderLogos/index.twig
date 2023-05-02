@@ -1,13 +1,13 @@
-<flynt-component load:on="visible" name="SliderLogos" class="bg-grey">
+<flynt-component load:on="visible" name="SliderLogos" class="bg-grey bg-cover bg-no-repeat" style="background-image: url('{{ backgroundImage }}');">
   <script type="application/json">{{ jsonData|json_encode }}</script>
-  <div class="w-full max-w-screen-xl mx-auto p-sm md:p-lg">
+  <div class="">
     {% if preContentHtml %}
-      <div class="h1">
+      <div class="h2 w-full max-w-screen-xl mx-auto px-sm py-md md:px-lg md:py-xl">
         {{ preContentHtml|e('wp_kses_post') }}
       </div>
     {% endif %}
-    <div data-ref="slider" class="slider swiper-container w-full h-full mt-lg md:mt-xl">
-      <div class="swiper-wrapper w-full h-full items-center">
+    <div data-ref="slider" class="slider swiper-container w-full h-full mt-sm md:mt-md border-y-2 bg-grey">
+      <div class="swiper-wrapper w-full h-full py-md items-center ">
         {% for image in imageFigure %}
           <div class="slider-item swiper-slide w-full h-full flex items-center justify-center">
             <figure class="figure w-full h-full relative">
@@ -20,8 +20,9 @@
           </div>
         {% endfor %}
       </div>
-      <button type="button" data-ref="prev" class="slider-button slider-button--prev"></button>
-      <button type="button" data-ref="next" class="slider-button slider-button--next"></button>
+      <div data-slider-pagination data-ref="pagination" class="slider-pagination swiper-pagination-fraction"></div>
+      {# <button type="button" data-ref="prev" class="slider-button slider-button--prev"></button>
+      <button type="button" data-ref="next" class="slider-button slider-button--next"></button> #}
     </div>
   </div>
 </flynt-component>

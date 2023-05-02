@@ -1,10 +1,5 @@
 flynt-component[name='BlockNewsHeader'] {
-  a {
-    color: var(--black);
-  
-    &::before {
-      content: '↦';
-      margin-right: 10px;
-    }
+  .text-body {
+    font-family: 'Epilogue Light', 'Trebuchet MS', sans-serif;
   }
 }

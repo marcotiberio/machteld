@@ -63,4 +63,33 @@ flynt-component[name='SliderLogos'] {
       }
     }
   }
+
+  .slider-pagination {
+    align-items: center;
+    bottom: 35px;
+    display: flex !important;
+    flex-flow: row;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+
+    @media (max-width: $breakpoint-tablet) {
+      bottom: 15px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: transparent;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    display: inline-block;
+    height: 12px;
+    opacity: 1;
+    width: 12px;
+
+    &-active {
+      background: var(--black);
+      opacity: 1;
+    }
+  }
 }

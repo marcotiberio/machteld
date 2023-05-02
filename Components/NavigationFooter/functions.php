@@ -42,10 +42,7 @@ Options::addTranslatable('NavigationFooter', [
     [
         'label' => __('Content', 'flynt'),
         'name' => 'contentHtml',
-        'type' => 'wysiwyg',
-        'tabs' => 'visual',
-        'media_upload' => 0,
-        'delay' => 1,
+        'type' => 'textarea'
     ],
     [
         'label' => __('Labels', 'flynt'),

@@ -1,0 +1,19 @@
+<flynt-component load:on="visible" name="GridImages" class="bg-grey">
+  <div class="wrapper w-full max-w-screen-xl mx-auto px-sm py-md md:px-lg md:py-xl">
+    {# {% if preContentTitle %}
+      <h2 class="text-black">{{ preContentTitle }}</h2>
+    {% endif %} #}
+    <div class="w-full mx-auto grid grid-cols-2 sm:grid-cols-2 gap-sm sm:gap-md" {{ options.colNumber ? 'data-columns="' ~ options.colNumber ~ '"' }}>
+      {% for box in boxes %}
+        <a href="{{ box.blockLink }}" class="flex items-center align-middle justify-center">
+          <figure class="p-sm md:p-sm h-full overflow-hidden">
+            <img class="content-image lazyload object-contain h-full"
+              src="{{ box.image.src }}"
+              data-srcset="{{function('wp_get_attachment_image_srcset', box.image.id)}}"
+              data-sizes="auto">
+          </figure>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</flynt-component>

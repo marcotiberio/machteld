@@ -4,34 +4,42 @@
 
 @font-face {
   font-display: swap;
-  font-family: 'Epilogue';
+  font-family: 'Epilogue Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../assets/fonts/Epilogue-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Epilogue Medium';
   font-style: normal;
   font-weight: 500;
-  src: url('../assets/fonts/Epilogue-VariableFont.woff2') format('woff2');
+  src: url('../assets/fonts/Epilogue-Medium.woff2') format('woff2');
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'Epilogue Black';
+  font-family: 'Archivo Bold';
   font-style: normal;
-  font-weight: 800;
-  src: url('../assets/fonts/Epilogue-VariableFont.woff2') format('woff2');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: 'Archivo Black';
-  font-style: normal;
-  font-weight: 800;
-  src: url('../assets/fonts/Archivo-VariableFont.woff2') format('woff2');
+  font-weight: 700;
+  src: url('../assets/fonts/Archivo-Bold.woff2') format('woff2');
 }
 
 @font-face {
   font-display: swap;
   font-family: 'Archivo Extrabold';
   font-style: normal;
+  font-weight: 800;
+  src: url('../assets/fonts/Archivo-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Archivo Black';
+  font-style: normal;
   font-weight: 900;
-  src: url('../assets/fonts/Archivo Black.woff2') format('woff2');
+  src: url('../assets/fonts/Archivo-Black.woff2') format('woff2');
 }
 
 // body {
@@ -39,32 +47,27 @@
 // }
 
 html {
-  font-size: var(--bodyFontSize);
+  font-size: 14px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   scroll-behavior: smooth;
 
   @media (min-width: $breakpoint-tablet + 1) {
-    font-size: var(--bodyFontSize);
+    font-size: 16px;
   }
 }
 
 body {
   color: var(--color-text);
-  font-family: 'Epilogue', 'Trebuchet MS', sans-serif;
-}
-
-#{$heading-selectors} {
-  --flow-space: 2.5rem;
-  font-weight: 700;
-  line-height: calc(1em + 0.5rem);
+  font-family: 'Epilogue Light', 'Trebuchet MS', sans-serif;
 }
 
 h1,
 .h1 {
-  font-family: 'Epilogue Black', 'Trebuchet MS', sans-serif;
-  font-size: 4rem;
+  font-family: 'Archivo Black', 'Trebuchet MS', sans-serif;
+  font-size: 3.5rem;
+  line-height: 100%;
   margin-bottom: 1rem;
 
   @media (min-width: $breakpoint-mobile) {
@@ -75,29 +78,30 @@ h1,
 h2,
 .h2 {
   font-family: 'Archivo Black', 'Trebuchet MS', sans-serif;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
+  line-height: 100%;
   margin-bottom: 1rem;
 
-  @media (min-width: $breakpoint-mobile) {
-    font-size: 4rem;
+  @media (min-width: $breakpoint-tablet + 1) {
+    font-size: 5.625rem;
   }
 }
 
 h3,
 .h3 {
-  font-family: 'Archivo Black', 'Trebuchet MS', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-family: 'Archivo Bold', 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+  line-height: 140%;
 
-  @media (min-width: $breakpoint-mobile) {
-    font-size: 2.5rem;
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 1.25rem;
   }
 }
 
 p,
 .paragraph,
 .body {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
   @media (min-width: $breakpoint-desktop) {
     font-size: 1.25rem;
@@ -105,12 +109,27 @@ p,
 
   a {
     color: var(--black);
-  
-    &::before {
-      content: '↦';
-      margin-right: 10px;
-    }
   }
+
+  // ul,
+  // ol {
+  //   color: currentColor !important;
+  //   list-style: disc !important;
+  //   padding: var(--spacingSmall) var(--spacingLarge);
+
+  //   li {
+  //     color: currentColor !important;
+  //     font-size: 1.5rem;
+
+  //     @media (min-width: $breakpoint-desktop) {
+  //       font-size: 1.25rem;
+  //     }
+  //   }
+  // }
+}
+
+.bodyBold {
+  font-family: 'Epilogue Medium', 'Trebuchet MS', sans-serif;
 }
 
 hr {
@@ -156,10 +175,21 @@ blockquote,
 * Lists & Tables
 */
 
-// ul,
-// ol {
-//   padding-inline-start: 1.5rem;
-// }
+ul,
+ol {
+  color: currentColor;
+  list-style: disc;
+  padding: var(--spacingSmall) var(--spacingLarge);
+
+  li {
+    color: currentColor;
+    font-size: 1.5rem;
+
+    @media (min-width: $breakpoint-desktop) {
+      font-size: 1.25rem;
+    }
+  }
+}
 
 table {
   border-collapse: collapse;
@@ -210,23 +240,34 @@ table {
   border-radius: 100px;
   cursor: pointer;
   display: inline-block;
-  font: inherit;
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: 'Archivo Black', 'Trebuchet MS', sans-serif;
+  font-size: 1.15rem;
+  font-weight: bold;
   letter-spacing: 0;
   line-height: 1;
   padding: 10px var(--spacingSmall);
   text-align: center;
+  transition: all 0.3s ease-in-out;
 
   @media (min-width: $breakpoint-desktop) {
-    font-size: 2.5rem;
-    padding: var(--spacingSmall) var(--spacingLarge);
+    font-size: 1.25rem;
+    padding: var(--spacingSmall) var(--spacingMedium);
   }
 
   &:disabled {
     cursor: default;
     opacity: 0.5;
     pointer-events: none;
+  }
+
+  &--small {
+    font-size: 1rem;
+    padding: 7px 10px;
+
+    @media (min-width: $breakpoint-desktop) {
+      font-size: 1.15rem;
+      padding: 10px var(--spacingSmall);
+    }
   }
 
   &--black {
@@ -237,7 +278,8 @@ table {
 
     &:hover,
     &:focus {
-      background-color: transparent;
+      background-color: var(--white);
+      border: 3px solid var(--black);
       color: var(--black);
     }
   }
@@ -245,82 +287,121 @@ table {
   &--green {
     background-color: var(--green);
     border: 3px solid var(--green);
+    color: var(--white);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: var(--white);
+      border: 3px solid var(--green);
+      color: var(--green);
+    }
+  }
+
+  &--blue {
+    background-color: var(--blue);
+    border: 3px solid var(--blue);
     color: var(--grey);
     text-decoration: none;
 
     &:hover,
     &:focus {
-      background-color: transparent;
+      background-color: var(--white);
+      border: 3px solid var(--blue);
+      color: var(--blue);
+    }
+  }
+
+  &--plusGreenBlue {
+    align-content: center;
+    align-items: center;
+    background-color: var(--green);
+    border: 3px solid var(--green);
+    color: var(--blue);
+    display: flex;
+    justify-content: center;
+    min-height: 40px;
+    min-width: 0;
+    text-decoration: none;
+    
+    @media (min-width: $breakpoint-tablet) {
+      padding: 0;
+    }
+
+    &::after {
+      bottom: 2px;
+      content: '+';
+      font-size: 40px;
+      padding: 0 10px;
+      position: relative;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--white);
       color: var(--green);
     }
   }
 
-  &--orange {
-    background-color: var(--orange);
-    border: 3px solid var(--orange);
-    color: var(--black);
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      background-color: transparent;
-      color: var(--black);
-    }
-  }
-
-  &--plusOrange {
+  &--plusGreenDark {
     align-content: center;
     align-items: center;
-    background-color: var(--orange);
-    border: 3px solid var(--orange);
-    color: var(--black);
+    background-color: var(--green);
+    border: 3px solid var(--green);
+    color: var(--darkgreen);
     display: flex;
-    height: 40px;
     justify-content: center;
+    min-height: 40px;
+    min-width: 0;
     text-decoration: none;
-    width: 40px;
     
     @media (min-width: $breakpoint-tablet) {
       padding: 0;
     }
 
     &::after {
+      bottom: 2px;
       content: '+';
       font-size: 40px;
+      padding: 0 10px;
+      position: relative;
     }
 
     &:hover,
     &:focus {
-      background-color: transparent;
-      color: var(--orange);
+      background-color: var(--white);
+      color: var(--green);
     }
   }
 
-  &--plusBlack {
+  &--plusGreenWhite {
     align-content: center;
     align-items: center;
-    background-color: var(--black);
-    border: 3px solid var(--black);
-    color: var(--orange);
+    background-color: var(--green);
+    border: 3px solid var(--green);
+    color: var(--white);
     display: flex;
-    height: 40px;
     justify-content: center;
+    min-height: 40px;
+    min-width: 0;
     text-decoration: none;
-    width: 40px;
     
     @media (min-width: $breakpoint-tablet) {
       padding: 0;
     }
 
     &::after {
+      bottom: 2px;
       content: '+';
       font-size: 40px;
+      padding: 0 10px;
+      position: relative;
     }
 
     &:hover,
     &:focus {
-      background-color: transparent;
-      color: var(--black);
+      background-color: var(--white);
+      color: var(--green);
     }
   }
 
@@ -418,10 +499,10 @@ label {
 
 #{$input-selectors} {
   appearance: none;
-  background-color: transparent;
+  background-color: var(--grey);
   border-bottom: 1px solid var(--black);
   border-radius: 0;
-  caret-color: var(--color-text);
+  caret-color: var(--black);
   color: var(--color-text);
   font-size: var(--bodyFontSizeSmall);
   margin-bottom: 35px;
@@ -528,8 +609,8 @@ flynt-component {
 }
 
 .mainContent {
-  @apply mt-[65px];
-  @apply lg:mt-[95px];
+  @apply mt-[25px];
+  @apply lg:mt-[80px];
   @apply lg:min-h-[calc(100vh_-_169px)];
 }
 

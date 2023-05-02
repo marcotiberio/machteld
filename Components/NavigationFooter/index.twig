@@ -1,20 +1,22 @@
-<flynt-component load:on="visible" name="NavigationFooter" class="bg-orange">
-  <div class="w-full max-w-screen-xl mx-auto p-sm">
-    <div class="flex flex-col lg:flex-row justify-between gap-lg items-center">
-    {% if logoFooter %}
-      <img class="logo lazyload max-w-[150px]"
-        src="{{ logoFooter.src }}"
-        data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
-        data-sizes="auto">
-    {% endif %}
-    {% if contentHtml %}
-      <div class="content">{{ contentHtml|e('wp_kses_post') }}</div>
-    {% endif %}
-    </div>
+<flynt-component load:on="visible" name="NavigationFooter" class="bg-blue">
+  <div class="w-full max-w-screen-xl mx-auto px-sm py-md md:px-lg md:py-lg grid grid-cols-1 sm:grid-cols-3 gap-md sm:gap-md">
     {% if menu %}
-      <nav class="navigation" aria-label="{{ labels.ariaLabel }}">
+      <nav class="navigation order-2 sm:order-1" aria-label="{{ labels.ariaLabel }}">
         {% include 'Partials/_menu.twig' with { 'items': menu.get_items, 'level': '0', 'maxLevel': maxLevel } only %}
       </nav>
     {% endif %}
+    {% if logoFooter %}
+      <div class="flex flex-col justify-end items-center order-1 sm:order-2">
+        <img class="logo lazyload max-w-[150px] mb-[7px]"
+          src="{{ logoFooter.src }}"
+          data-srcset="{{function('wp_get_attachment_image_srcset', logoFooter.id)}}"
+          data-sizes="auto">
+      </div>
+    {% endif %}
+    <div class="flex flex-col justify-end items-center sm:items-end order-3 sm:order-3">
+      {% if contentHtml %}
+        <div class="content text-center">{{ contentHtml }}</div>
+      {% endif %}
+    </div>
   </div>
 </flynt-component>

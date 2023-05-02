@@ -15,14 +15,17 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'flexible_content',
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
+                    Components\BlockCollapse\getACFLayout(),
                     Components\BlockCta\getACFLayout(),
                     Components\BlockImageText\getACFLayout(),
                     Components\BlockManifesto\getACFLayout(),
                     Components\BlockPilotSelector\getACFLayout(),
                     Components\BlockWysiwyg\getACFLayout(),
+                    Components\GridImages\getACFLayout(),
                     Components\HeroContactForm\getACFLayout(),
                     Components\ListingNews\getACFLayout(),
                     Components\ListingPartners\getACFLayout(),
+                    Components\ListingPartnersCpt\getACFLayout(),
                     Components\ListingPilots\getACFLayout(),
                     Components\SliderImages\getACFLayout(),
                     Components\SliderLogos\getACFLayout(),
@@ -40,6 +43,11 @@ add_action('Flynt/afterRegisterComponents', function () {
                     'param' => 'post_type',
                     'operator' => '!=',
                     'value' => 'pilot'
+                ],
+                [
+                    'param' => 'post_type',
+                    'operator' => '!=',
+                    'value' => 'partner'
                 ],
                 [
                     'param' => 'post_type',

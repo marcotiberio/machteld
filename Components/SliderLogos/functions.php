@@ -27,6 +27,18 @@ function getACFLayout()
                 'endpoint' => 0
             ],
             [
+                'label' => __('Background Image', 'flynt'),
+                'name' => 'backgroundImage',
+                'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
+                'type' => 'image',
+                'preview_size' => 'medium',
+                'required' => 0,
+                'mime_types' => 'jpg,jpeg,png,svg',
+                'wrapper' =>  [
+                    'width' => 100,
+                ],
+            ],
+            [
                 'label' => __('Title', 'flynt'),
                 'instructions' => __('Want to add a headline? And a paragraph? Go ahead! Or just leave it empty and nothing will be shown.', 'flynt'),
                 'name' => 'preContentHtml',

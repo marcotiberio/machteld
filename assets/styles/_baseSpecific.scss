@@ -1,0 +1,31 @@
+.page-partners {
+  .viewAll {
+    display: none;
+  }
+}
+
+.page-contact {
+  .mainContent {
+    @apply mt-[140px];
+  }
+}
+
+.single {
+  .mainContent {
+    @apply mt-[160px];
+  }
+
+  .wrapper {
+    @apply px-sm;
+    @apply py-md;
+    @apply md:px-lg;
+    @apply md:py-md;
+  }
+}
+
+.single-partner {
+  flynt-component[name='BlockPilotSelector'] {
+    background-color: var(--blue) !important;
+    color: var(--white) !important;
+  }
+}

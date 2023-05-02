@@ -49,27 +49,27 @@
     "src": "Components/NavigationBurger/script.js"
   },
   "Components/SliderHorizontal/script.js": {
-    "file": "assets/script-b0b61d87.js",
+    "file": "assets/script-8ce7ae59.js",
     "imports": [
-      "_swiper-bundle.min-2c4734cd.js",
+      "_swiper-bundle.min-800ce7a7.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderHorizontal/script.js"
   },
   "Components/SliderImages/script.js": {
-    "file": "assets/script-605ece1c.js",
+    "file": "assets/script-403f3a7f.js",
     "imports": [
-      "_swiper-bundle.min-2c4734cd.js",
+      "_swiper-bundle.min-800ce7a7.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
     "src": "Components/SliderImages/script.js"
   },
   "Components/SliderLogos/script.js": {
-    "file": "assets/script-0ddd3ddf.js",
+    "file": "assets/script-4d97704e.js",
     "imports": [
-      "_swiper-bundle.min-2c4734cd.js",
+      "_swiper-bundle.min-800ce7a7.js",
       "_helpers-0bb72b7a.js"
     ],
     "isDynamicEntry": true,
@@ -81,11 +81,11 @@
   "_index-2a8ce3c2.js": {
     "file": "assets/index-2a8ce3c2.js"
   },
-  "_swiper-bundle.min-2c4734cd.js": {
+  "_swiper-bundle.min-800ce7a7.js": {
     "css": [
       "assets/swiper-bundle-6c3c321b.css"
     ],
-    "file": "assets/swiper-bundle.min-2c4734cd.js"
+    "file": "assets/swiper-bundle.min-800ce7a7.js"
   },
   "assets/admin.js": {
     "file": "assets/admin-02f88806.js",
@@ -93,33 +93,29 @@
     "src": "assets/admin.js"
   },
   "assets/admin.scss": {
-    "file": "assets/admin-2f05f91e.css",
+    "file": "assets/admin-96fe2a34.css",
     "isEntry": true,
     "src": "assets/admin.scss"
   },
-  "assets/fonts/Archivo-Italic-VariableFont.woff2": {
-    "file": "assets/Archivo-Italic-VariableFont-82ee36fd.woff2",
-    "src": "assets/fonts/Archivo-Italic-VariableFont.woff2"
+  "assets/fonts/Archivo-Black.woff2": {
+    "file": "assets/Archivo-Black-9f476e0e.woff2",
+    "src": "assets/fonts/Archivo-Black.woff2"
   },
-  "assets/fonts/Archivo-VariableFont.woff2": {
-    "file": "assets/Archivo-VariableFont-ae6a7188.woff2",
-    "src": "assets/fonts/Archivo-VariableFont.woff2"
+  "assets/fonts/Archivo-Bold.woff2": {
+    "file": "assets/Archivo-Bold-ee22ed00.woff2",
+    "src": "assets/fonts/Archivo-Bold.woff2"
   },
-  "assets/fonts/Epilogue-Italic-VariableFont.woff2": {
-    "file": "assets/Epilogue-Italic-VariableFont-9120bdc6.woff2",
-    "src": "assets/fonts/Epilogue-Italic-VariableFont.woff2"
+  "assets/fonts/Archivo-ExtraBold.woff2": {
+    "file": "assets/Archivo-ExtraBold-bd1246ef.woff2",
+    "src": "assets/fonts/Archivo-ExtraBold.woff2"
   },
-  "assets/fonts/Epilogue-VariableFont.woff2": {
-    "file": "assets/Epilogue-VariableFont-e296bf08.woff2",
-    "src": "assets/fonts/Epilogue-VariableFont.woff2"
+  "assets/fonts/Epilogue-Light.woff2": {
+    "file": "assets/Epilogue-Light-a5e59d0b.woff2",
+    "src": "assets/fonts/Epilogue-Light.woff2"
   },
-  "assets/fonts/oraclegm-regularmono-webfont.woff": {
-    "file": "assets/oraclegm-regularmono-webfont-d9253bb3.woff",
-    "src": "assets/fonts/oraclegm-regularmono-webfont.woff"
-  },
-  "assets/fonts/public-sans-v14-latin-500.woff2": {
-    "file": "assets/public-sans-v14-latin-500-db83ad69.woff2",
-    "src": "assets/fonts/public-sans-v14-latin-500.woff2"
+  "assets/fonts/Epilogue-Medium.woff2": {
+    "file": "assets/Epilogue-Medium-9e01f1c5.woff2",
+    "src": "assets/fonts/Epilogue-Medium.woff2"
   },
   "assets/images/logo.svg": {
     "file": "assets/logo-26c0c58f.svg",
@@ -139,12 +135,12 @@
       "Components/SliderImages/script.js",
       "Components/SliderLogos/script.js"
     ],
-    "file": "assets/main-dd8a0c09.js",
+    "file": "assets/main-3c2e3e81.js",
     "isEntry": true,
     "src": "assets/main.js"
   },
   "assets/main.scss": {
-    "file": "assets/main-f34bff9d.css",
+    "file": "assets/main-fe2e2f41.css",
     "isEntry": true,
     "src": "assets/main.scss"
   },
@@ -154,7 +150,7 @@
     "src": "assets/print.scss"
   },
   "assets/tinyMce.scss": {
-    "file": "assets/tinyMce-3c176b51.css",
+    "file": "assets/tinyMce-796381ca.css",
     "isEntry": true,
     "src": "assets/tinyMce.scss"
   },

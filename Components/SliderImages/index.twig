@@ -1,26 +1,34 @@
 <flynt-component load:on="visible" name="SliderImages">
   <script type="application/json">{{ jsonData|json_encode }}</script>
-  <div class="h-[calc(100vh_-_95px)]">
+  <div class="h-[calc(60vh_-_40px)] md:h-[calc(100vh_-_40px)]">
     {% if preContentHtml %}
-      <div class="preContent h1">
+      <div class="h1 text-white">
         {{ preContentHtml|e('wp_kses_post') }}
       </div>
     {% endif %}
     <div data-ref="slider" class="slider swiper-container w-full h-full">
       <div class="swiper-wrapper w-full h-full">
         {% for image in imageFigure %}
-          <div class="slider-item swiper-slide w-full h-full flex items-center justify-center">
+          <div class="slider-item swiper-slide w-full h-full flex items-center justify-center first:bg-blue">
             <figure class="figure w-full h-full relative">
-              <img class="lazyload w-full h-full object-cover relative"
+              <img class="lazyload w-full h-full object-cover md:object-cover relative  {% if image.imageOverlay %}brightness-75{% endif %}"
                 src="{{ image.imageImage.src | resize(32) }}"
                 data-srcset="{{function('wp_get_attachment_image_srcset', image.imageImage.id)}}"
                 data-sizes="auto"
                 alt="{{ image.imageImage.alt|e }}">
-              <div class="absolute top-0 left-0 h-full w-full flex flex-col gap-md justify-center align-middle items-center">
-                <h1>{{ image.imageTitle }}</h1>
+              <div class="absolute top-0 md:top-[135px] left-0 h-[calc(100%_-_40px)] md:h-[calc(100vh_-_105px)] w-full flex flex-col gap-md justify-end md:justify-center align-middle items-center">
+                {% if image.imageTitle %}
+                <h1 class="text-white text-center w-[80%] md:w-full">
+                  {{ image.imageTitle }}
+                </h1>
+                {% else %}
+                <h1 class="text-transparent text-center pointer-events-none">
+                  ReUse Alliance
+                </h1>
+                {% endif %}
                 {% if image.imageLink %}
-                  <a class="button button--orange" href="{{ image.imageLink .url }}"{% if image.imageLink.target %} target="{{ image.imageLink.target }}" rel="noreferrer noopener"{% endif %}>
-                    {{ image.imageLink .title|e }}
+                  <a class="button button--green md:mt-xl" href="{{ image.imageLink .url }}"{% if image.imageLink.target %} target="{{ image.imageLink.target }}" rel="noreferrer noopener"{% endif %}>
+                    {{ image.imageLink.title|e }}
                   </a>
                 {% endif %}
               </h1>

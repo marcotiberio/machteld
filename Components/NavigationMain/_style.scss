@@ -10,7 +10,7 @@ flynt-component[name='NavigationMain'] {
   }
 
   .item {
-    font-family: 'Epilogue Black', 'Trebuchet MS', sans-serif;
+    font-family: 'Archivo Bold', 'Trebuchet MS', sans-serif;
   }
   
   .submenu {
@@ -31,6 +31,7 @@ flynt-component[name='NavigationMain'] {
   .button {
     @media (min-width: $breakpoint-desktop) {
       font-size: 1.25rem;
+      padding: var(--spacingSmall) 0;
     }
   }
 }

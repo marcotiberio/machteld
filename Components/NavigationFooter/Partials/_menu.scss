@@ -1,18 +1,17 @@
 .menu {
   @include reset-list;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacingSmall);
-  justify-content: center;
-  list-style: none;
-  margin-top: var(--spacingSmall);
-  padding: var(--spacingSmall) 0;
+  font-family: 'Archivo Bold', 'Trebuchet MS', sans-serif;
+  list-style: none !important;
 
   &-link {
     @include reset-link;
     color: var(--white);
-    font-weight: 800;
+
+    &:hover,
+    &:focus {
+      color: var(--green);
+      text-decoration: none;
+    }
   }
 
   &-item {
@@ -20,7 +19,8 @@
 
     &:hover,
     &:focus {
-      text-decoration: underline;
+      color: var(--green);
+      text-decoration: none;
     }
 
     .menu-image {
@@ -30,6 +30,9 @@
   }
 
   .current-menu-item {
-    text-decoration: underline;
+    .menu-link {
+      color: var(--green);
+      text-decoration: none;
+    }
   }
 }

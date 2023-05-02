@@ -34,11 +34,23 @@ function getACFLayout()
         'label' => 'Listing: Pilots',
         'sub_fields' => [
             [
-                'label' => __('Title', 'flynt'),
-                'name' => 'titleTab',
+                'label' => __('General', 'flynt'),
+                'name' => 'generalTab',
                 'type' => 'tab',
                 'placement' => 'top',
                 'endpoint' => 0
+            ],
+            [
+                'label' => __('Background Image', 'flynt'),
+                'name' => 'backgroundImage',
+                'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
+                'type' => 'image',
+                'preview_size' => 'medium',
+                'required' => 0,
+                'mime_types' => 'jpg,jpeg,png,svg',
+                'wrapper' =>  [
+                    'width' => 100,
+                ],
             ],
             [
                 'label' => __('Title', 'flynt'),

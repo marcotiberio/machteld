@@ -1,32 +1,35 @@
-{% if items|length > 0 %}
-  <flynt-component load:on="visible" name="BlockPilotSelector" class="bg-grey">
-    <div class="w-full max-w-screen-xl mx-auto p-sm md:p-lg">
-      {% if preContentTitle %}
-      <div class="w-full flex justify-between items-center">
-        <h2>{{ preContentTitle }}</h2>
-        <a href="{{ labels.allPostsLink.url }}" class="button--link underline hover:no-underline caption font-bold text-body">{{ labels.allPosts }}</a>
-      </div>
-      {% endif %}
-      <ul class="w-full mx-auto mt-lg md:mt-xl grid grid-cols-1 sm:grid-cols-3 gap-sm sm:gap-md">
-        {% for item in items %}
-          <li class="grid-item {{ item.post_type }}">
-            <div class="content">
-              <a href="{{ item.link }}" class="content-link" title="{{ item.title }}">
-                <img class="content-image lazyload mb-sm"
+<flynt-component load:on="visible" name="BlockPilotSelector" class="bg-cover bg-no-repeat" style="background-image: url('{{ backgroundImage }}'); background-color:{% if colorBackground %}{{ colorBackground }}{% else %}var(--grey){% endif %};">
+  <div class="w-full max-w-screen-xl mx-auto px-sm py-md md:px-lg md:py-xl">
+    {% if preContentTitle %}
+    <div class="w-full flex flex-col md:flex-row justify-between items-start md:items-center">
+      <h2>{{ preContentTitle }}</h2>
+      <a href="{{ labels.allPostsLink.url }}" class="button button--small button--green md:py-[5px] md:px-sm mt-sm md:mt-0 rounded-full caption font-bold text-bodySmall">{{ labels.allPosts }}</a>
+    </div>
+    {% endif %}
+    <ul class="list-none p-0 w-full mx-auto mt-lg md:mt-xl grid grid-cols-1 sm:grid-cols-3 gap-sm sm:gap-xxl">
+      {% for item in pilots %}
+        <li class="grid-item {{ item.post_type }}">
+          <div class="content">
+            <a href="{{ item.link }}" class="content-link" title="{{ item.title }}">
+              <figure class="mb-sm overflow-hidden">
+                <img class="content-image lazyload object-cover aspect-4/3"
                   src="{{ item.thumbnail.src }}"
                   data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
                   data-sizes="auto">
-                <div class="content-inner mt-[10px]">
-                  <div class="text-body font-bold">{{ item.title }}</div>
-                  <div class="text-body font-bold text-darkgrey">{{ item.partner }}</div>
-                  <div class="text-body">{{ item.intro|truncate(10) }}</div>
-                  <div class="h3">→</div>
+              </figure>
+              <div class="content-inner mt-[10px] flex flex-col">
+                <div class="text-body font-bold bodyBold">{{ item.title }}</div>
+                <div class="text-body font-bold bodyBold text-darkgrey">
+                  {% if item.category %}<span>{{ item.category }} · </span>{% endif %}
+                  {% if item.partner %}<span>{{ item.partner }}</span>{% endif %}
                 </div>
-              </a>
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+                <div class="text-body pt-sm light">{{ item.intro|truncate(10) }}</div>
+                <div class="text-body bodyBold arrow mt-md">→</div>
+              </div>
+            </a>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
-{% endif %}
+</div>

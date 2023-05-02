@@ -1,5 +1,10 @@
 flynt-component[name='NavigationFooter'] {
-  font-size: var(--bodyFontSizeSmall);
+  font-size: 1.15rem !important;
+
+  .content {
+    color: var(--white);
+    font-family: 'Archivo Bold', 'Trebuchet MS', sans-serif;
+  }
 
   @import 'Partials/menu';
 }

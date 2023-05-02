@@ -6,4 +6,16 @@ flynt-component[name='BlockImageText'] {
   [data-image-position='left'] {
     @apply sm:flex-row;
   }
+
+  [data-image-vertical-alignment='top'] {
+    @apply sm:items-start;
+  }
+
+  [data-image-vertical-alignment='center'] {
+    @apply sm:items-center;
+  }
+
+  [data-image-vertical-alignment='bottom'] {
+    @apply sm:items-end;
+  }
 }

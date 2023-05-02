@@ -31,35 +31,6 @@ function getACFLayout()
                 'required' => 0,
             ],
             [
-                'label' => __('Contact Info', 'flynt'),
-                'name' => 'contactInfoTab',
-                'type' => 'tab',
-                'placement' => 'top',
-                'endpoint' => 0,
-            ],
-            [
-                'label' => __('Contact Info', 'flynt'),
-                'name' => 'contactInfo',
-                'type' => 'repeater',
-                'collapsed' => '',
-                'layout' => 'block',
-                'button_label' => __('Add Column', 'flynt'),
-                'max' => 3,
-                'sub_fields' => [
-                    [
-                        'label' => __('Text Editor', 'flynt'),
-                        'name' => 'textEditorHtml',
-                        'type' => 'wysiwyg',
-                        'tabs' => 'visual',
-                        'media_upload' => 0,
-                        'delay' => 1,
-                        'wrapper' => [
-                            'width' => 100
-                        ],
-                    ]
-                ]
-            ],
-            [
                 'label' => __('Options', 'flynt'),
                 'name' => 'optionsTab',
                 'type' => 'tab',
@@ -73,6 +44,18 @@ function getACFLayout()
                 'layout' => 'row',
                 'sub_fields' => [
                     FieldVariables\getColorBackground(),
+                    [
+                        'label' => __('Background Image', 'flynt'),
+                        'name' => 'backgroundImage',
+                        'instructions' => __('Image-Format: JPG, PNG, SVG.', 'flynt'),
+                        'type' => 'image',
+                        'preview_size' => 'medium',
+                        'required' => 0,
+                        'mime_types' => 'jpg,jpeg,png,svg',
+                        'wrapper' =>  [
+                            'width' => 100,
+                        ],
+                    ],
                 ]
             ]
         ]

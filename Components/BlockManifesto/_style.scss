@@ -1,0 +1,11 @@
+flynt-component[name='BlockManifesto'] {
+  .button--plusGreenDark {
+    @media (max-width: $breakpoint-tablet) {
+      padding: 0;
+    }
+
+    &::after {
+      font-size: 25px;
+    }
+  }
+}
